@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax修改後</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+
+/*滾動效果會變得滑順*/
+        html{
+            scroll-behavior: smooth;
+        }
+
+        .back{
+            background-image: url(./DJI_0836.JPG);
+/*加上一層灰黑遮罩 rgba(a為比例) 讓整體明度降低*/
+            background-color: rgba(0, 0, 0, .4);
+/*background-blend-mode 背景混合模式*/
+            background-blend-mode: multiply;
+/*background 可以插入圖片 可以設定定位*/
+            background-position: center;
+/*設定大小  cover 圖片等比例縮放,其中長邊有容納進容器中*/
+            background-size: cover;
+/* repeat 重複顯示圖片  no 不要重複*/
+            background-repeat: no-repeat;
+/* attachment 附屬  可決定圖片是否跟著滾輪移動   fixed 固定*/
+            background-attachment: fixed;
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        h3{
+            text-align: center;
+        }
+
+        p{
+            color: #000;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-align: justify;
+        }
+
+        a:link, a:hover ,a:active , a:visited {
+            color: rgb(255, 255, 255);
+        }
+
+        .index{
+            width: 100%;
+            height: 5vh;
+            position: fixed;
+            z-index: 3;
+        }
+
+        .logo img{
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            float: left;
+        }
+
+        .index ul li{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            border-radius: 15px;
+            display: inline-block;
+            padding: 10px 30px;
+            filter: opacity(0.6);
+            float: right;
+        }
+
+        li{
+            margin-right: 15px;
+        }
+
+        .word-1, .word-7 {
+            background-color: #111;
+            color: #fff;
+            font-size: 25px;
+    /*字型*/
+            font-family: fantasy;
+    /* letter-spacing 字元間距*/
+            letter-spacing: 10px;
+    /* padding 內距(向內退縮)*/
+            padding: 18px;
+    /* filter 濾鏡效果  opacity 不透明度*/
+            filter: opacity(0.6);
+    /* text-align 文字擺放位置*/
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .word-2 , .word-4 , .word-6{
+            height: 25vh;
+            filter: opacity(0.8);
+            letter-spacing: 5px;
+            text-align: center;
+            padding: 40px 350px 10px;
+            font-size: 15px;   
+            z-index: 2;
+        }
+
+        .word-2{
+            background-color: rgb(255, 255, 255);
+            color: #000;
+        }
+
+        .word-4 ,.word-6{
+            background-color: black;
+            color: rgb(255, 255, 255);
+        }
+
+        .img-1, .img-3, .img-5, .img-8{
+            width: 100%;
+            height: 75vh;
+            background-position-y: 0%;
+            background-size: cover;
+/* background-attachment 决定背景图像的位置(滾動or固定)*/
+            background-attachment: fixed;
+/*filter濾鏡效果  saturate飽和度*/
+            filter: saturate(0.6);
+            z-index: 2;
+        }
+
+
+        .img-3{
+            background-image: url(./DJI_0768.JPG);
+        }
+        
+        .img-5{
+            background-image: url(./DJI_0805.JPG);
+        }
+
+        .word-9{
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            font-family: 新細明體;
+            /* letter-spacing 字元間距*/
+            letter-spacing: 5px;
+            /* padding 內距(向內退縮)*/
+            padding: 10px;
+            /* text-align 文字擺放位置*/
+            text-align: center;
+            filter: opacity(0.8);
+            background-color: rgb(179, 179, 179);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="index">
+        <div class="logo">
+            <a href="#back"><img src="./app.png" alt="日月潭"></a>
+        </div>
+        <ul>
+            <li>
+                <div class="bottom-1"><a href="#word-2">拉魯島</a></div>
+            </li>
+            <li>
+                <div class="bottom-2"><a href="#word-4">慈恩塔</a></div>
+            </li>
+            <li>
+                <div class="bottom-3"><a href="#word-6">日月潭</a></div>
+            </li>
+        </ul>
+    </div>
+    <div id="back" class="back">
+        <div class="word-1">Sun Moon Lake</div>
+    </div>
+    <div id="word-2" class="word-2">
+        <h3>拉魯島</h3>
+        傳說是邵族最高祖靈的居處，也是邵族早期的聚落之一，南投縣政府指定拉魯島為邵族祖靈聖地，以表對邵族人的尊重。
+            <br>2000年邵族人在島上種下茄苳樹，象徵卲族子孫世代文化綿延不絕，拉魯島到現在仍有其神聖性和象徵的意義，邵族人相信他們的最高祖靈就是居住在拉魯，由此可見，拉魯島在邵族人心目中的神聖地位。
+
+            <br><br>然而拉魯島在不同的年代和背景中，還有其他幾種不同的稱呼；清領時期文獻稱「珠嶼」、「珠山」、「珠仔山」；日本人稱為「玉島」等，二戰後被國民黨政府稱為「光華島」，意為「光耀中華」。而後正名為拉魯島(Lalu)。
+    </div>
+    <div class="img-3"></div>
+    <div id="word-4" class="word-4">
+        <h3>日月潭慈恩塔</h3>
+        位於海拔954公尺沙巴蘭山（又名二龍山）上的慈恩塔，塔高46公尺，塔頂正好1000公尺，是蔣介石為感念母親王太夫人於1969年興建，1971年完工；站在塔頂視野遼闊，望向潭面，以拉魯島為界，東北方形較寬闊似日輪；西南方較狹長如月鉤，即可明白日月潭名稱的由來。
+        <br>當您沿著欄杆做360景觀巡禮過後，面對西方尋找潭面上的拉魯島，可以發現，對岸涵碧半島上的一座涼亭，和拉魯島、玄光寺、玄奘寺和我們所在的慈恩塔正好在同一中軸上，形成一條「幸福連線」，相傳在中軸上許下幸福之願，往往心想事成。
+    </div>
+    <div class="img-5"></div>
+    <div id="word-6" class="word-6">
+        <h3>明潭</h3>
+        全潭面積827公頃，湖面周圍約33公里，北半部形如日輪，南半部形如月鉤，故而得名。日月潭的水源來自濁水溪上游，而濁水溪發源於合歡山，故日月潭的源頭為合歡山。
+        <br>在今年3.4月時，中部連日未降甘霖，日月潭也遭逢近半世紀以來最嚴峻的乾旱，水位見底露出乾裂大地，連象徵性的九蛙造景也幾乎重現水面，大地上留存著曾經駛在湖面上，如今已成為沈船的遺址。
+        <br>在吸引遊客到訪的同時，也不禁讓人感嘆大自然的災害，與日俱增越來越劇烈，缺水環境議題值得我們省思。
+    </div>
+    <div class="back">
+        <div class="word-7">Taiwan NO.1!</div>
+    </div>
+    <div class="word-9">
+        <span>BY.楓葉 攝影/網頁前端<br><br>2021/10</span>
+    </div>
+
+</body>
+</html>
